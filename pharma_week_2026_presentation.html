@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharma Week 2026 - Quiz Competition Presentation</title>
+  <!-- Typography & Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    :root {
+      --bg-dark: #0b0f19;
+      --bg-card-dark: #141c2e;
+      --bg-card-border: #23314d;
+      --primary: #0d9488;
+      --primary-light: #2dd4bf;
+      --primary-dark: #0f766e;
+      --accent-indigo: #6366f1;
+      --accent-amber: #f59e0b;
+      --accent-emerald: #10b981;
+      --accent-rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --slide-width: 1280px;
+      --slide-height: 720px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-main);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .college-logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .shreeyash-logo-svg {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .naac-badge {
+      background: linear-gradient(135deg, #b91c1c, #991b1b);
+      color: #ffffff;
+      border: 1px solid #f87171;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .pci-badge {
+      background: linear-gradient(135deg, #065f46, #047857);
+      color: #ffffff;
+      border: 1px solid #34d399;
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .tagline-banner {
+      background: rgba(13, 148, 136, 0.15);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      border-radius: 30px;
+      padding: 6px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #2dd4bf;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dates-pill {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-left: 4px solid #f59e0b;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+
+    .brand-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--primary-light);
+    }
+
+    .controls-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #334155;
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #334155;
+      color: #ffffff;
+      border-color: #475569;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+
+    .btn-amber {
+      background: var(--accent-amber);
+      color: #000;
+      border: none;
+    }
+
+    .btn-amber:hover {
+      background: #d97706;
+      color: #fff;
+    }
+
+    .timer-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      background: #0284c7;
+      color: #ffffff;
+      padding: 5px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-width: 80px;
+      justify-content: center;
+    }
+
+    .timer-badge.warning {
+      background: #dc2626;
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.6; }
+      100% { opacity: 1; }
+    }
+
+    .viewport {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      position: relative;
+    }
+
+    .slides-wrapper {
+      width: 100%;
+      max-width: var(--slide-width);
+      aspect-ratio: 16 / 9;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+
+    .slide-container {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      transform: scale(0.98);
+      padding: 32px 48px;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      color: #0f172a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    .slide-container.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    .slide-dark {
+      background: var(--bg-dark);
+      color: var(--text-main);
+    }
+
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 12px;
+    }
+
+    .slide-dark .quiz-header {
+      border-bottom-color: var(--bg-card-border);
+    }
+
+    .quiz-badge {
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .quiz-round-tag {
+      font-size: 15px;
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .slide-dark .quiz-round-tag {
+      color: var(--text-muted);
+    }
+
+    .question-card {
+      background: #f8fafc;
+      border: 2px solid #cbd5e1;
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 18px;
+    }
+
+    .slide-dark .question-card {
+      background: var(--bg-card-dark);
+      border-color: var(--bg-card-border);
+    }
+
+    .question-text {
+      font-size: 21px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.4;
+    }
+
+    .slide-dark .question-text {
+      color: #f8fafc;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .option-box {
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .slide-dark .option-box {
+      background: #1e293b;
+      border-color: #334155;
+    }
+
+    .option-letter {
+      background: #e0f2fe;
+      color: #0284c7;
+      font-weight: 800;
+      font-size: 16px;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .option-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .slide-dark .option-text {
+      color: #cbd5e1;
+    }
+
+    .option-box.correct {
+      border-color: var(--accent-emerald) !important;
+      background: #f0fdf4 !important;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.25);
+    }
+
+    .option-box.correct .option-letter {
+      background: var(--accent-emerald) !important;
+      color: #ffffff !important;
+    }
+
+    .option-box.correct .option-text {
+      color: #065f46 !important;
+      font-weight: 700;
+    }
+
+    .answer-banner {
+      background: #e2e8f0;
+      color: #475569;
+      border-radius: 12px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      transition: all 0.3s ease;
+    }
+
+    .answer-banner.revealed {
+      background: var(--accent-emerald);
+      color: #ffffff;
+      box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+    }
+
+    .answer-banner-icon {
+      font-size: 20px;
+    }
+
+    .answer-banner-text {
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    /* Picture Round Frame */
+    .picture-frame {
+      border: 3px dashed var(--primary);
+      border-radius: 16px;
+      background: #f0fdf4;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 250px;
+      margin-bottom: 16px;
+    }
+
+    .slide-dark .picture-frame {
+      background: rgba(13, 148, 136, 0.1);
+    }
+
+    .picture-frame img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    .bottom-dock {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 40px;
+      padding: 6px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      z-index: 100;
+    }
+
+    .slide-counter {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary-light);
+      min-width: 100px;
+      text-align: center;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: var(--bg-card-dark);
+      border: 1px solid var(--bg-card-border);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 1000px;
+      max-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+    }
+
+    .modal-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid var(--bg-card-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .modal-body {
+      padding: 24px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+    }
+
+    .grid-thumb {
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .grid-thumb:hover, .grid-thumb.active {
+      border-color: var(--primary-light);
+      background: #0f766e;
+    }
+
+    .grid-thumb-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-top: 4px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .scoreboard-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .score-card {
+      background: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 16px;
+      padding: 18px;
+      text-align: center;
+    }
+
+    .team-name {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--primary-light);
+      margin-bottom: 8px;
+    }
+
+    .score-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 38px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 8px 0;
+    }
+
+    .score-actions {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .coordinator-footer {
+      background: linear-gradient(90deg, rgba(13, 148, 136, 0.2), rgba(245, 158, 11, 0.2));
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      border-radius: 8px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    @media print {
+      body { background: #ffffff !important; color: #000000 !important; }
+      .top-bar, .bottom-dock, .modal-overlay { display: none !important; }
+      .viewport { padding: 0 !important; display: block !important; }
+      .slides-wrapper { box-shadow: none !important; max-width: 100% !important; border-radius: 0 !important; overflow: visible !important; }
+      .slide-container { position: relative !important; opacity: 1 !important; visibility: visible !important; transform: none !important; page-break-after: always !important; break-after: page !important; height: 100vh !important; width: 100vw !important; border: none !important; }
+      .slide-dark { background: #0f172a !important; color: #ffffff !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="college-logo-container">
+      <!-- Shreeyash Pratishthan Official Logo Image -->
+      <img src="https://lh3.googleusercontent.com/d/1QW-J5x4aXbw9dyqr7pWAyMVnoLIwwgyF" class="shreeyash-logo-svg" alt="Shreeyash Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0d9488/ffffff?text=SIPER';">
+
+      <div>
+        <div class="brand-title">
+          <span>SHREEYASH INSTITUTE OF PHARMACEUTICAL EDUCATION & RESEARCH</span>
+        </div>
+        <div style="font-size: 11px; color: #94a3b8; display: flex; align-items: center; gap: 8px; margin-top: 2px;">
+          <span>Chh. Sambhajinagar</span>
+          <span>•</span>
+          <span>Affiliated to DBATU, Lonere</span>
+          <span>•</span>
+          <span class="naac-badge"><i class="fa-solid fa-award"></i> NAAC B+</span>
+          <span class="pci-badge"><i class="fa-solid fa-building-columns"></i> PCI Approved</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls-group">
+      <div id="timerDisplay" class="timer-badge">
+        <i class="fa-solid fa-stopwatch"></i> <span id="timerVal">30s</span>
+      </div>
+      <button class="btn btn-amber" onclick="startTimer(30)"><i class="fa-solid fa-play"></i> 30s</button>
+      <button class="btn" onclick="startTimer(10)"><i class="fa-solid fa-bolt"></i> 10s</button>
+      <button class="btn" onclick="toggleReveal()"><i class="fa-solid fa-eye"></i> Reveal (R)</button>
+    </div>
+
+    <div class="controls-group">
+      <button class="btn" onclick="openScoreboard()"><i class="fa-solid fa-trophy"></i> Scoreboard</button>
+      <button class="btn" onclick="openGrid()"><i class="fa-solid fa-border-all"></i> Slide Grid</button>
+      <button class="btn btn-primary" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Save PDF</button>
+    </div>
+  </header>
+
+  <main class="viewport">
+    <div class="slides-wrapper">
+
+      <!-- SLIDE 0: Initial Welcome Poster Page -->
+      <div class="slide-container slide-dark active" id="slide-0" style="padding:0; justify-content:center; align-items:center; background:#0b0f19; overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1QuM6k95g7xmCXLB0u4q5GtaqrS61y9Vf" 
+             alt="Pharma Week Welcome Poster" 
+             style="width:100%; height:100%; object-fit:contain; display:block;" 
+             onerror="this.onerror=null; this.src='https://placehold.co/1280x720/0d9488/ffffff?text=Pharma+Week+2026+Welcome+Poster';">
+      </div>
+
+      <!-- SLIDE 1: Title Slide -->
+      <div class="slide-container slide-dark" id="slide-1">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+          <div style="display:flex; gap:14px; align-items:center;">
+            <!-- Official Crest Logo Image -->
+            <img src="https://lh3.googleusercontent.com/d/1QW-J5x4aXbw9dyqr7pWAyMVnoLIwwgyF" style="width:64px; height:64px; flex-shrink:0; object-fit:contain; border-radius:8px;" alt="College Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0d9488/ffffff?text=SIPER';">
+            <div>
+              <p style="color:#2dd4bf; font-weight:800; font-size:12px; text-transform:uppercase; letter-spacing:1px; margin-bottom:2px;">
+                SHREEYASH PRATISHTHAN'S
+              </p>
+              <h1 style="font-size:24px; font-weight:800; color:#ffffff; margin:0; line-height:1.2;">
+                SHREEYASH INSTITUTE OF PHARMACEUTICAL EDUCATION AND RESEARCH
+              </h1>
+              <p style="font-size:12px; color:#cbd5e1; margin-top:2px; font-weight:600;">
+                CHH. SAMBHAJINAGAR • (D.Pharm, B.Pharm, M.Pharm)
+              </p>
+            </div>
+          </div>
+
+          <!-- Quality & Accreditation Badges -->
+          <div style="text-align:right; display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
+            <div style="display:flex; gap:6px; align-items:center;">
+              <span class="naac-badge"><i class="fa-solid fa-award"></i> NAAC B+</span>
+              <span class="pci-badge"><i class="fa-solid fa-building-columns"></i> PCI Approved</span>
+            </div>
+            <span style="font-size:11px; color:#94a3b8; font-weight:600; max-width:280px; text-align:right; margin-top:2px;">
+              Dr. Babasaheb Ambedkar Technological University, Lonere
+            </span>
+          </div>
+        </div>
+
+        <!-- Event Banner Header -->
+        <div style="background: linear-gradient(90deg, #0f766e, #0369a1); border-radius:10px; padding:10px 18px; display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <div>
+            <span style="background:#f59e0b; color:#000; font-weight:800; font-size:10px; padding:2px 6px; border-radius:4px; text-transform:uppercase; letter-spacing:0.5px;">INSTITUTE & STATE LEVEL CELEBRATIONS</span>
+            <h2 style="font-size:20px; font-weight:800; color:#fff; margin:2px 0 0 0;">WORLD PHARMACISTS WEEK 2026</h2>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-size:11px; color:#a7f3d0; font-weight:700;"><i class="fa-solid fa-lightbulb"></i> Ideas • Research • Innovation • Impact</div>
+            <div style="font-size:12px; color:#ffffff; font-weight:800; margin-top:1px;">Theme: "Swastha Bharat: Combating Antimicrobial Resistance (AMR)"</div>
+          </div>
+        </div>
+
+        <!-- Schedule & Important Timelines Row -->
+        <div style="display:flex; gap:10px; margin-bottom:10px;">
+          <div class="dates-pill" style="flex:1;">
+            <strong style="color:#f59e0b; display:block; font-size:10px; text-transform:uppercase;">Institute-Level Screening</strong>
+            <span style="color:#ffffff; font-weight:700; font-size:12px;"><i class="fa-regular fa-calendar-check"></i> Before 10 October 2026</span>
+          </div>
+          <div class="dates-pill" style="flex:1; border-left-color:#10b981;">
+            <strong style="color:#34d399; display:block; font-size:10px; text-transform:uppercase;">State-Level Submission</strong>
+            <span style="color:#ffffff; font-weight:700; font-size:12px;"><i class="fa-solid fa-paper-plane"></i> 12 October 2026</span>
+          </div>
+          <div class="dates-pill" style="flex:1.2; border-left-color:#38bdf8;">
+            <strong style="color:#38bdf8; display:block; font-size:10px; text-transform:uppercase;">Participant Eligibility</strong>
+            <span style="color:#ffffff; font-weight:700; font-size:12px;"><i class="fa-solid fa-user-graduate"></i> D.Pharm, B.Pharm &amp; M.Pharm Students</span>
+          </div>
+        </div>
+
+        <p style="font-size:13px; font-weight:700; color:#cbd5e1; margin-bottom:8px;">
+          <i class="fa-solid fa-trophy" style="color:#f59e0b;"></i> Official Event Competitions Schedule (9 Events):
+        </p>
+
+        <!-- 9 Competitions Grid (3x3) -->
+        <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; flex-grow:1;">
+          <div style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="background:#0284c7; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-palette"></i>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Scitoons</h3>
+              <p style="font-size:11px; color:#94a3b8; margin:0;">Scientific Cartooning</p>
+            </div>
+          </div>
+
+          <div style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="background:#0284c7; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-file-powerpoint"></i>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Poster Presentation</h3>
+              <p style="font-size:11px; color:#94a3b8; margin:0;">Research &amp; AMR Focus</p>
+            </div>
+          </div>
+
+          <div style="background:#064e3b; border:2px solid #10b981; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px; box-shadow:0 0 10px rgba(16,185,129,0.3);">
+            <div style="background:#10b981; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-circle-question"></i>
+            </div>
+            <div>
+              <span style="background:#047857; color:#a7f3d0; font-size:8px; font-weight:800; padding:1px 4px; border-radius:3px; text-transform:uppercase;">FEATURED STAGE</span>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Pharma-Quiz</h3>
+              <p style="font-size:11px; color:#6ee7b7; margin:0;">Inter-Class Championship</p>
+            </div>
+          </div>
+
+          <div style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="background:#0284c7; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Leaflet Preparation</h3>
+              <p style="font-size:11px; color:#94a3b8; margin:0;">Patient Health Education</p>
+            </div>
+          </div>
+
+          <div style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="background:#0284c7; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-masks-theater"></i>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Drama (Nukkad Natak)</h3>
+              <p style="font-size:11px; color:#94a3b8; margin:0;">Street Awareness Play</p>
+            </div>
+          </div>
+
+          <div style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="background:#0284c7; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-video"></i>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Reel Making</h3>
+              <p style="font-size:11px; color:#94a3b8; margin:0;">Digital Media Awareness</p>
+            </div>
+          </div>
+
+          <!-- Added Event 7 -->
+          <div style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="background:#0284c7; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-user-doctor"></i>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Patient Counseling</h3>
+              <p style="font-size:11px; color:#94a3b8; margin:0;">Clinical Communication</p>
+            </div>
+          </div>
+
+          <!-- Added Event 8 -->
+          <div style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="background:#0284c7; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-cubes"></i>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Pharma Model Making</h3>
+              <p style="font-size:11px; color:#94a3b8; margin:0;">3D Working Models</p>
+            </div>
+          </div>
+
+          <!-- Added Event 9 -->
+          <div style="background:#1e293b; border:1px solid #334155; border-radius:8px; padding:8px 12px; display:flex; align-items:center; gap:10px;">
+            <div style="background:#0284c7; width:34px; height:34px; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; flex-shrink:0;">
+              <i class="fa-solid fa-pen-nib"></i>
+            </div>
+            <div>
+              <h3 style="font-size:13px; color:#fff; margin:0;">Scientific Essay Writing</h3>
+              <p style="font-size:11px; color:#94a3b8; margin:0;">Literature &amp; AMR Review</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coordinator Footer Banner -->
+        <div class="coordinator-footer">
+          <i class="fa-solid fa-user-tie" style="color:#f59e0b;"></i>
+          <span><strong>Prepared by:</strong> Mr. Ashish Jivrakh (World Pharmacists week 2026 - Coordinator)</span>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: Quiz Title Slide -->
+      <div class="slide-container slide-dark" id="slide-2" style="justify-content:center; align-items:center; text-align:center;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">
+          <img src="https://lh3.googleusercontent.com/d/1QW-J5x4aXbw9dyqr7pWAyMVnoLIwwgyF" style="width:52px; height:52px; flex-shrink:0; object-fit:contain; border-radius:8px;" alt="College Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0d9488/ffffff?text=SIPER';">
+          <div style="text-align:left;">
+            <h4 style="color:#ffffff; font-size:16px; margin:0; font-weight:800;">SHREEYASH INSTITUTE OF PHARMACEUTICAL EDUCATION AND RESEARCH</h4>
+            <span style="color:#94a3b8; font-size:12px;">Dr. Babasaheb Ambedkar Technological University, Lonere • <span class="naac-badge" style="font-size:10px;">NAAC B+</span></span>
+          </div>
+        </div>
+
+        <div class="tagline-banner" style="margin-bottom:20px;">
+          <i class="fa-solid fa-flask-vial"></i> IDEAS • RESEARCH • INNOVATION • IMPACT
+        </div>
+        
+        <h1 style="font-size:52px; font-weight:800; color:#ffffff; margin:0 0 16px 0; line-height:1.1;">
+          PHARMA-QUIZ CHAMPIONSHIP 2026
+        </h1>
+        
+        <p style="font-size:18px; color:#cbd5e1; max-width:850px; margin:0 0 28px 0;">
+          Theme: <strong>Swastha Bharat: Combating Antimicrobial Resistance (AMR)</strong>
+        </p>
+
+        <div style="display:flex; gap:24px; justify-content:center; align-items:center; margin-bottom:24px;">
+          <div style="background:#1e293b; padding:12px 24px; border-radius:12px; border:1px solid #334155;">
+            <span style="font-size:11px; color:#94a3b8; display:block; text-transform:uppercase;">ELIGIBILITY</span>
+            <strong style="font-size:15px; color:#2dd4bf;">D.Pharm / B.Pharm / M.Pharm</strong>
+          </div>
+          <div style="background:#1e293b; padding:12px 24px; border-radius:12px; border:1px solid #334155;">
+            <span style="font-size:11px; color:#94a3b8; display:block; text-transform:uppercase;">SUBMISSION DEADLINE</span>
+            <strong style="font-size:15px; color:#f59e0b;">12 October 2026</strong>
+          </div>
+        </div>
+
+        <div class="coordinator-footer" style="max-width:500px;">
+          <i class="fa-solid fa-user-tie" style="color:#f59e0b;"></i>
+          <span>Prepared by: <strong>Mr. Ashish Jivrakh</strong> (World Pharmacists week 2026 - Coordinator)</span>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: Round Rules -->
+      <div class="slide-container" id="slide-3">
+        <div class="quiz-header">
+          <h2 style="font-size:26px; font-weight:800; color:#0f172a; margin:0;">
+            Championship Rules &amp; Competition Format
+          </h2>
+          <span class="quiz-badge">Stage Guidelines</span>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; flex-grow:1; align-items:stretch;">
+          <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:14px; padding:24px; display:flex; flex-direction:column;">
+            <h3 style="font-size:18px; color:#0d9488; margin-bottom:14px; display:flex; align-items:center; gap:10px;">
+              <i class="fa-solid fa-list-check"></i> Contest Rounds Breakdown
+            </h3>
+            <ul style="list-style:none; line-height:2; font-size:16px; color:#334155; flex:1;">
+              <li><strong>1. Round 1 (MCQs):</strong> 10 Questions | 30 Secs | +10 Marks</li>
+              <li><strong>2. Round 2 (Rapid Fire):</strong> 5 Questions | 10 Secs | +5 Marks</li>
+              <li><strong>3. Round 3 (Visual ID):</strong> 3 Images | 20 Secs | +10 Marks</li>
+              <li><strong>4. Sudden Death:</strong> 5 Hard Tie-Breakers (If needed)</li>
+            </ul>
+          </div>
+
+          <div style="background:#f0fdf4; border:2px solid #a7f3d0; border-radius:14px; padding:24px; display:flex; flex-direction:column;">
+            <h3 style="font-size:18px; color:#047857; margin-bottom:14px; display:flex; align-items:center; gap:10px;">
+              <i class="fa-solid fa-gavel"></i> Regulations & Protocol
+            </h3>
+            <ul style="list-style:none; line-height:2; font-size:16px; color:#166534; flex:1;">
+              <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> Team spokesperson must give the final response.</li>
+              <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> Responses once locked cannot be modified.</li>
+              <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> Buzzer required before answering Rapid Fire.</li>
+              <li><i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b; margin-right:8px;"></i> Decision of Faculty Panel is final & binding.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- MCQ 1 -->
+      <div class="slide-container" id="slide-4" data-correct="A" data-exp="Penicillins inhibit the transpeptidase enzyme (PBP), preventing peptidoglycan cross-linking in bacterial cell walls.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 1 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q1. Which bacterial enzyme is specifically inhibited by Penicillins to prevent cell wall cross-linking?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Transpeptidase</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">DNA Gyrase</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Beta-Lactamase</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Dihydrofolate Reductase</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 2 -->
+      <div class="slide-container" id="slide-5" data-correct="C" data-exp="Paracetamol acts centrally by inhibiting cyclooxygenase (COX) in the CNS to inhibit prostaglandin synthesis in the hypothalamic heat-regulating center.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 2 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q2. What is the primary mechanism of action of Paracetamol (Acetaminophen) for its antipyretic effect?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Opioid Receptor Agonism</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Histamine H1 Antagonism</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Central COX Inhibition</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Peripheral Phospholipase Blockade</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 3 -->
+      <div class="slide-container" id="slide-6" data-correct="D" data-exp="Griffin's Hydrophilic-Lipophilic Balance (HLB) scale ranges from 0 to 20 to quantify surfactant lipophilicity vs hydrophilicity.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 3 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q3. In Pharmaceutics, what does the "HLB" scale quantify for surfactant molecules?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Heavy Metal Burden</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">High-Level Binding Capacity</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Hydration Level of Base</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Hydrophilic-Lipophilic Balance</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 4 -->
+      <div class="slide-container" id="slide-7" data-correct="C" data-exp="Atropine is a tropane alkaloid isolated from Atropa belladonna that acts as a competitive antagonist at muscarinic acetylcholine receptors.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 4 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q4. Which tropane alkaloid derived from Atropa belladonna acts as a competitive muscarinic antagonist?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Reserpine</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Morphine</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Atropine</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Quinine</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 5 -->
+      <div class="slide-container" id="slide-8" data-correct="A" data-exp="Bioavailability (F) is defined as the fraction of an administered dose of unchanged drug that reaches systemic circulation intact.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 5 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q5. What pharmacokinetic parameter defines the fraction of unchanged drug reaching systemic circulation?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Bioavailability (F)</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Clearance (Cl)</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Elimination Half-Life</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Volume of Distribution</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 6 -->
+      <div class="slide-container" id="slide-9" data-correct="D" data-exp="Multi-Drug Resistance (MDR) occurs when bacteria acquire resistance to multiple distinct antibiotic classes simultaneously.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 6 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q6. What term describes bacterial resistance acquired against multiple antimicrobial classes simultaneously?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Tachyphylaxis</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Idiosyncrasy</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Tolerance</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Multi-Drug Resistance (MDR)</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 7 -->
+      <div class="slide-container" id="slide-10" data-correct="B" data-exp="Schedule H under Indian Drugs and Cosmetics Rules lists prescription-only medicines that can be sold only against a prescription from a Registered Medical Practitioner.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 7 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q7. Under Indian Drugs &amp; Cosmetics Rules, which Schedule governs prescription-only medicines?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Schedule C</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Schedule H</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Schedule M</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Schedule X</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 8 -->
+      <div class="slide-container" id="slide-11" data-correct="C" data-exp="Water-in-Oil (W/O) emulsions consist of water droplets dispersed in a continuous oil phase.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 8 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q8. What emulsion type consists of aqueous droplets dispersed throughout a continuous oily phase?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">O/W Emulsion</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Microemulsion</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">W/O Emulsion</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Multiple Emulsion</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 9 -->
+      <div class="slide-container" id="slide-12" data-correct="A" data-exp="The liver is the primary site for Phase I and Phase II metabolic biotransformations mediated by Cytochrome P450 enzymes.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 9 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q9. Which human organ is the principal site for metabolic biotransformation via Cytochrome P450?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Liver</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Kidneys</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Lungs</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Small Intestine</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- MCQ 10 -->
+      <div class="slide-container" id="slide-13" data-correct="B" data-exp="Rifampicin metabolic excretion causes benign reddish-orange discoloration of urine, sweat, tears, and saliva.">
+        <div class="quiz-header">
+          <span class="quiz-badge">Round 1: MCQ</span>
+          <span class="quiz-round-tag">Question 10 of 10</span>
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            Q10. Which anti-tubercular antibiotic causes characteristic reddish-orange discoloration of body fluids?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Isoniazid</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Rifampicin</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Ethambutol</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Pyrazinamide</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-stopwatch answer-banner-icon"></i>
+          <span class="answer-banner-text">Time Limit: 30 Seconds — Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire 1 -->
+      <div class="slide-container" id="slide-14" data-correct="ANSWER: N-ACETYLCYSTEINE (NAC)" data-exp="N-Acetylcysteine neutralizes the toxic reactive metabolite NAPQI by replenishing depleted hepatic glutathione stores.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#ea580c;">Round 2: Rapid Fire</span>
+          <span class="quiz-round-tag">Question 1 of 5 (10 Seconds)</span>
+        </div>
+        <div class="question-card" style="border-color:#fdba74; background:#fff7ed;">
+          <p class="question-text" style="color:#9a3412;">
+            RF1. Which specific antidote is administered in acute Paracetamol (Acetaminophen) toxicity to restore hepatic glutathione?
+          </p>
+        </div>
+        <div style="flex-grow:1; display:flex; align-items:center; justify-content:center;">
+          <div style="background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:12px; padding:24px 40px; text-align:center;">
+            <p style="font-size:20px; font-weight:700; color:#64748b; margin:0;">
+              <i class="fa-solid fa-stopwatch" style="color:#ea580c;"></i> Rapid Fire — Press 'R' to reveal answer
+            </p>
+          </div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-bolt answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire 2 -->
+      <div class="slide-container" id="slide-15" data-correct="ANSWER: PHENYTOIN" data-exp="Phenytoin saturates hepatic metabolizing enzymes (CYP2C9/2C19) within its narrow therapeutic plasma range.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#ea580c;">Round 2: Rapid Fire</span>
+          <span class="quiz-round-tag">Question 2 of 5 (10 Seconds)</span>
+        </div>
+        <div class="question-card" style="border-color:#fdba74; background:#fff7ed;">
+          <p class="question-text" style="color:#9a3412;">
+            RF2. Which antiepileptic drug exhibits non-linear (zero-order) capacity-limited kinetics at therapeutic dose levels?
+          </p>
+        </div>
+        <div style="flex-grow:1; display:flex; align-items:center; justify-content:center;">
+          <div style="background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:12px; padding:24px 40px; text-align:center;">
+            <p style="font-size:20px; font-weight:700; color:#64748b; margin:0;">
+              <i class="fa-solid fa-stopwatch" style="color:#ea580c;"></i> Rapid Fire — Press 'R' to reveal answer
+            </p>
+          </div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-bolt answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire 3 -->
+      <div class="slide-container" id="slide-16" data-correct="ANSWER: 30S RIBOSOMAL SUBUNIT" data-exp="Aminoglycosides bind irreversibly to the 30S subunit to cause mRNA misreading and inhibit bacterial protein synthesis.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#ea580c;">Round 2: Rapid Fire</span>
+          <span class="quiz-round-tag">Question 3 of 5 (10 Seconds)</span>
+        </div>
+        <div class="question-card" style="border-color:#fdba74; background:#fff7ed;">
+          <p class="question-text" style="color:#9a3412;">
+            RF3. Which bacterial ribosomal subunit (30S or 50S) is the primary target bound by Aminoglycoside antibiotics?
+          </p>
+        </div>
+        <div style="flex-grow:1; display:flex; align-items:center; justify-content:center;">
+          <div style="background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:12px; padding:24px 40px; text-align:center;">
+            <p style="font-size:20px; font-weight:700; color:#64748b; margin:0;">
+              <i class="fa-solid fa-stopwatch" style="color:#ea580c;"></i> Rapid Fire — Press 'R' to reveal answer
+            </p>
+          </div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-bolt answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire 4 -->
+      <div class="slide-container" id="slide-17" data-correct="ANSWER: SCHEDULE M" data-exp="Schedule M specifies mandatory factory layout, equipment, quality control, and GMP compliance requirements in India.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#ea580c;">Round 2: Rapid Fire</span>
+          <span class="quiz-round-tag">Question 4 of 5 (10 Seconds)</span>
+        </div>
+        <div class="question-card" style="border-color:#fdba74; background:#fff7ed;">
+          <p class="question-text" style="color:#9a3412;">
+            RF4. Which Schedule under Indian Drugs &amp; Cosmetics Rules outlines mandatory Good Manufacturing Practices (GMP)?
+          </p>
+        </div>
+        <div style="flex-grow:1; display:flex; align-items:center; justify-content:center;">
+          <div style="background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:12px; padding:24px 40px; text-align:center;">
+            <p style="font-size:20px; font-weight:700; color:#64748b; margin:0;">
+              <i class="fa-solid fa-stopwatch" style="color:#ea580c;"></i> Rapid Fire — Press 'R' to reveal answer
+            </p>
+          </div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-bolt answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Rapid Fire 5 -->
+      <div class="slide-container" id="slide-18" data-correct="ANSWER: ACE INHIBITORS (or ARBs)" data-exp="ACE inhibitors prevent efferent arteriolar vasoconstriction, causing a severe drop in glomerular filtration rate (GFR).">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#ea580c;">Round 2: Rapid Fire</span>
+          <span class="quiz-round-tag">Question 5 of 5 (10 Seconds)</span>
+        </div>
+        <div class="question-card" style="border-color:#fdba74; background:#fff7ed;">
+          <p class="question-text" style="color:#9a3412;">
+            RF5. Which class of antihypertensive drugs is strictly contraindicated in patients with bilateral renal artery stenosis?
+          </p>
+        </div>
+        <div style="flex-grow:1; display:flex; align-items:center; justify-content:center;">
+          <div style="background:#f1f5f9; border:2px dashed #cbd5e1; border-radius:12px; padding:24px 40px; text-align:center;">
+            <p style="font-size:20px; font-weight:700; color:#64748b; margin:0;">
+              <i class="fa-solid fa-stopwatch" style="color:#ea580c;"></i> Rapid Fire — Press 'R' to reveal answer
+            </p>
+          </div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-bolt answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Picture 1 -->
+      <div class="slide-container" id="slide-19" data-correct="IDENTIFIED: MORTAR AND PESTLE" data-exp="Mortar and pestle is the classical pharmacy tool used for grinding and mixing solid drug substances (trituration).">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#0284c7;">Round 3: Picture Round</span>
+          <span class="quiz-round-tag">Image 1 of 3</span>
+        </div>
+        <div class="picture-frame">
+          <img src="https://media.istockphoto.com/id/1966547615/photo/close-up-of-pharmacists-mixture-a-medicine-with-a-mortar-and-using-glove.jpg?s=612x612&w=0&k=20&c=-x_AM7u7K48MKDn12DlsWDvxdPJmP-fbGKBEiCOImyw=" alt="Mortar and Pestle">
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            P1. Identify this iconic pharmaceutical apparatus used for trituration and comminution of drug particles.
+          </p>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-camera answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Picture 2 -->
+      <div class="slide-container" id="slide-20" data-correct="IDENTIFIED: BOWL OF HYGIEIA" data-exp="The Bowl of Hygieia features a medicinal cup wrapped with the Serpent of Epidaurus, symbolizing healing and pharmacy.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#0284c7;">Round 3: Picture Round</span>
+          <span class="quiz-round-tag">Image 2 of 3</span>
+        </div>
+        <div class="picture-frame">
+          <img src="https://rlv.zcache.com/pharmacist_bowl_of_hygeia_symbol_sticker-r0eb7431bb6654da9b734812af33f3de2_zg2qos_644.webp?rlvnet=1" alt="Bowl of Hygieia">
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            P2. Name this international pharmaceutical symbol featuring a chalice wrapped with a serpent.
+          </p>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-camera answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Picture 3 -->
+      <div class="slide-container" id="slide-21" data-correct="IDENTIFIED: HARD GELATIN CAPSULE" data-exp="Hard gelatin capsules consist of two telescoping cylindrical shells (cap and body) housing dry powders or granules.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#0284c7;">Round 3: Picture Round</span>
+          <span class="quiz-round-tag">Image 3 of 3</span>
+        </div>
+        <div class="picture-frame">
+          <img src="https://img.magnific.com/free-psd/stunning-closeup-two-vibrant-blue-glass-capsules_191095-84586.jpg?semt=ais_hybrid&w=740&q=80" alt="Capsule">
+        </div>
+        <div class="question-card">
+          <p class="question-text">
+            P3. Identify this solid oral dosage form consisting of two cylindrical shells (Cap and Body).
+          </p>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-camera answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Intermission Slide -->
+      <div class="slide-container slide-dark" id="slide-22" style="justify-content:center; align-items:center; text-align:center;">
+        <div style="background:#1e293b; border:2px solid #334155; padding:36px; border-radius:20px; max-width:680px; width:100%;">
+          <i class="fa-solid fa-mug-hot" style="font-size:50px; color:#f59e0b; margin-bottom:16px;"></i>
+          <h2 style="font-size:34px; font-weight:800; color:#ffffff; margin:0 0 10px 0;">
+            INTERMISSION / SCORE UPDATE
+          </h2>
+          <p style="font-size:16px; color:#cbd5e1; margin-bottom:24px;">
+            The jury panel is tabulating scores. Up Next: Sudden Death Tie-Breakers!
+          </p>
+          <button class="btn btn-primary" onclick="openScoreboard()" style="padding:10px 20px; font-size:15px;">
+            <i class="fa-solid fa-trophy"></i> Open Leaderboard Dashboard
+          </button>
+        </div>
+      </div>
+
+      <!-- Tie Breaker 1 -->
+      <div class="slide-container" id="slide-23" data-correct="B" data-exp="Noyes-Whitney equation mathematically models the dissolution rate of solid drug particles in liquid media (dC/dt = k*S*(Cs - C)).">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#dc2626;">Sudden Death Tie-Breaker</span>
+          <span class="quiz-round-tag">Question 1 of 5</span>
+        </div>
+        <div class="question-card" style="border-color:#fca5a5; background:#fef2f2;">
+          <p class="question-text" style="color:#991b1b;">
+            TB1. Which equation mathematically describes the dissolution rate of a solid drug formulation in liquid media?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Henderson-Hasselbalch Equation</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Noyes-Whitney Equation</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Michaelis-Menten Equation</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Fick's First Law</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-trophy answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Tie Breaker 2 -->
+      <div class="slide-container" id="slide-24" data-correct="B" data-exp="Pharmacovigilance (Phase IV) encompasses detection, assessment, understanding, and prevention of adverse effects after drug approval.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#dc2626;">Sudden Death Tie-Breaker</span>
+          <span class="quiz-round-tag">Question 2 of 5</span>
+        </div>
+        <div class="question-card" style="border-color:#fca5a5; background:#fef2f2;">
+          <p class="question-text" style="color:#991b1b;">
+            TB2. Which Phase IV clinical discipline continuously monitors adverse drug reactions post-marketing approval?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Pharmacokinetics</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Pharmacovigilance</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Pharmacogenomics</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Toxicogenomics</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-trophy answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Tie Breaker 3 -->
+      <div class="slide-container" id="slide-25" data-correct="B" data-exp="The 4-membered Beta-Lactam ring is the active pharmacophore in penicillins that binds transpeptidases.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#dc2626;">Sudden Death Tie-Breaker</span>
+          <span class="quiz-round-tag">Question 3 of 5</span>
+        </div>
+        <div class="question-card" style="border-color:#fca5a5; background:#fef2f2;">
+          <p class="question-text" style="color:#991b1b;">
+            TB3. What essential structural ring core is responsible for antibacterial activity in Penicillins?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Thiazolidine Ring</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Beta-Lactam Ring</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Benzene Ring</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Imidazole Ring</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-trophy answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Tie Breaker 4 -->
+      <div class="slide-container" id="slide-26" data-correct="C" data-exp="Physiological antagonism occurs when two agonists act on different receptors to produce opposing physiological effects (e.g. Histamine vs Epinephrine).">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#dc2626;">Sudden Death Tie-Breaker</span>
+          <span class="quiz-round-tag">Question 4 of 5</span>
+        </div>
+        <div class="question-card" style="border-color:#fca5a5; background:#fef2f2;">
+          <p class="question-text" style="color:#991b1b;">
+            TB4. What antagonism occurs when two drugs act on distinct receptors producing opposing physiological effects?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Competitive Antagonism</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Chemical Antagonism</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Physiological Antagonism</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Allosteric Antagonism</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-trophy answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Tie Breaker 5 -->
+      <div class="slide-container" id="slide-27" data-correct="A" data-exp="Area Under the Curve (AUC) is calculated by integrating Plasma Drug Concentration against Time to reflect systemic drug exposure.">
+        <div class="quiz-header">
+          <span class="quiz-badge" style="background:#dc2626;">Sudden Death Tie-Breaker</span>
+          <span class="quiz-round-tag">Question 5 of 5</span>
+        </div>
+        <div class="question-card" style="border-color:#fca5a5; background:#fef2f2;">
+          <p class="question-text" style="color:#991b1b;">
+            TB5. Which biological curve parameters are integrated mathematically to yield Area Under the Curve (AUC)?
+          </p>
+        </div>
+        <div class="options-grid">
+          <div class="option-box" data-opt="A"><span class="option-letter">A</span><span class="option-text">Plasma Concentration vs. Time</span></div>
+          <div class="option-box" data-opt="B"><span class="option-letter">B</span><span class="option-text">Urine Volume vs. Time</span></div>
+          <div class="option-box" data-opt="C"><span class="option-letter">C</span><span class="option-text">Biliary Excretion vs. Time</span></div>
+          <div class="option-box" data-opt="D"><span class="option-letter">D</span><span class="option-text">Receptor Binding vs. Dose</span></div>
+        </div>
+        <div class="answer-banner">
+          <i class="fa-solid fa-trophy answer-banner-icon"></i>
+          <span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>
+        </div>
+      </div>
+
+      <!-- Victory Slide -->
+      <div class="slide-container slide-dark" id="slide-28" style="justify-content:center; align-items:center; text-align:center;">
+        <i class="fa-solid fa-trophy" style="font-size:68px; color:#f59e0b; margin-bottom:20px;"></i>
+        <h1 style="font-size:44px; font-weight:800; color:#ffffff; margin:0 0 14px 0;">
+          CONGRATULATIONS CHAMPIONS!
+        </h1>
+        <p style="font-size:20px; color:#cbd5e1; max-width:700px; margin-bottom:28px;">
+          Pharma Week 2026 Winners &amp; Participants Felicitation
+        </p>
+        <button class="btn btn-amber" onclick="openScoreboard()" style="padding:12px 24px; font-size:16px; margin-bottom:20px;">
+          <i class="fa-solid fa-medal"></i> View Final Leaderboard
+        </button>
+        <div class="coordinator-footer" style="max-width:500px;">
+          <i class="fa-solid fa-user-tie" style="color:#f59e0b;"></i>
+          <span>Event Organized &amp; Coordinated by: <strong>Mr. Ashish Jivrakh</strong></span>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="bottom-dock">
+    <button class="btn" onclick="prevSlide()"><i class="fa-solid fa-arrow-left"></i> Prev</button>
+    <div class="slide-counter" id="slideCounter">Slide 1 of 28</div>
+    <button class="btn" onclick="nextSlide()">Next <i class="fa-solid fa-arrow-right"></i></button>
+    <button class="btn" onclick="toggleFullscreen()" title="Fullscreen Mode"><i class="fa-solid fa-expand"></i></button>
+  </div>
+
+  <!-- Grid Modal -->
+  <div class="modal-overlay" id="gridModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color:#fff; font-size:18px;"><i class="fa-solid fa-border-all"></i> Slide Index & Overview</h3>
+        <button class="btn" onclick="closeModals()"><i class="fa-solid fa-xmark"></i> Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="grid-container" id="gridThumbContainer"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scoreboard Modal -->
+  <div class="modal-overlay" id="scoreModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 style="color:#fff; font-size:18px;"><i class="fa-solid fa-trophy" style="color:#f59e0b;"></i> Live Competition Leaderboard</h3>
+        <button class="btn" onclick="closeModals()"><i class="fa-solid fa-xmark"></i> Close</button>
+      </div>
+      <div class="modal-body">
+        <div class="scoreboard-grid">
+          <div class="score-card">
+            <div class="team-name">Team A (Pharmaceutics)</div>
+            <div class="score-value" id="score-A">0</div>
+            <div class="score-actions">
+              <button class="btn btn-primary" onclick="updateScore('A', 10)">+10</button>
+              <button class="btn btn-amber" onclick="updateScore('A', 5)">+5</button>
+              <button class="btn" onclick="updateScore('A', -5)">-5</button>
+            </div>
+          </div>
+          <div class="score-card">
+            <div class="team-name">Team B (Pharmacology)</div>
+            <div class="score-value" id="score-B">0</div>
+            <div class="score-actions">
+              <button class="btn btn-primary" onclick="updateScore('B', 10)">+10</button>
+              <button class="btn btn-amber" onclick="updateScore('B', 5)">+5</button>
+              <button class="btn" onclick="updateScore('B', -5)">-5</button>
+            </div>
+          </div>
+          <div class="score-card">
+            <div class="team-name">Team C (Pharmacognosy)</div>
+            <div class="score-value" id="score-C">0</div>
+            <div class="score-actions">
+              <button class="btn btn-primary" onclick="updateScore('C', 10)">+10</button>
+              <button class="btn btn-amber" onclick="updateScore('C', 5)">+5</button>
+              <button class="btn" onclick="updateScore('C', -5)">-5</button>
+            </div>
+          </div>
+          <div class="score-card">
+            <div class="team-name">Team D (Clinical Pharm)</div>
+            <div class="score-value" id="score-D">0</div>
+            <div class="score-actions">
+              <button class="btn btn-primary" onclick="updateScore('D', 10)">+10</button>
+              <button class="btn btn-amber" onclick="updateScore('D', 5)">+5</button>
+              <button class="btn" onclick="updateScore('D', -5)">-5</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-container');
+    const totalSlides = slides.length;
+    let timerInterval = null;
+    let timerSeconds = 30;
+
+    // Team scores state
+    const scores = { A: 0, B: 0, C: 0, D: 0 };
+
+    function updateCounter() {
+      document.getElementById('slideCounter').innerText = `Slide ${currentSlide + 1} of ${totalSlides}`;
+    }
+
+    function showSlide(index) {
+      if (index < 0) index = 0;
+      if (index >= totalSlides) index = totalSlides - 1;
+
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      currentSlide = index;
+      updateCounter();
+      clearInterval(timerInterval);
+      document.getElementById('timerVal').innerText = '30s';
+      document.getElementById('timerDisplay').classList.remove('warning');
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function toggleReveal() {
+      const activeSlide = slides[currentSlide];
+      const correctOpt = activeSlide.getAttribute('data-correct');
+      const explanation = activeSlide.getAttribute('data-exp');
+
+      if (!correctOpt) return;
+
+      const banner = activeSlide.querySelector('.answer-banner');
+      const isRevealed = banner && banner.classList.contains('revealed');
+
+      if (banner) {
+        if (!isRevealed) {
+          banner.classList.add('revealed');
+          banner.innerHTML = `<i class="fa-solid fa-circle-check answer-banner-icon"></i><span class="answer-banner-text">Correct Answer: ${correctOpt} — ${explanation || ''}</span>`;
+          
+          // Highlight MCQ box if exists
+          const optBox = activeSlide.querySelector(`.option-box[data-opt="${correctOpt}"]`);
+          if (optBox) {
+            optBox.classList.add('correct');
+          }
+          playBeep(800, 0.2);
+        } else {
+          banner.classList.remove('revealed');
+          banner.innerHTML = `<i class="fa-solid fa-stopwatch answer-banner-icon"></i><span class="answer-banner-text">Press 'R' or Click Reveal to show answer</span>`;
+          activeSlide.querySelectorAll('.option-box').forEach(box => box.classList.remove('correct'));
+        }
+      }
+    }
+
+    /* Web Audio API Timer Beep */
+    function playBeep(freq = 600, duration = 0.1) {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.frequency.value = freq;
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    function startTimer(seconds) {
+      clearInterval(timerInterval);
+      timerSeconds = seconds;
+      const display = document.getElementById('timerDisplay');
+      const valEl = document.getElementById('timerVal');
+      
+      display.classList.remove('warning');
+      valEl.innerText = `${timerSeconds}s`;
+
+      timerInterval = setInterval(() => {
+        timerSeconds--;
+        valEl.innerText = `${timerSeconds}s`;
+
+        if (timerSeconds <= 5 && timerSeconds > 0) {
+          display.classList.add('warning');
+          playBeep(440, 0.08);
+        }
+
+        if (timerSeconds <= 0) {
+          clearInterval(timerInterval);
+          valEl.innerText = "TIME'S UP!";
+          playBeep(220, 0.4);
+        }
+      }, 1000);
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen();
+      }
+    }
+
+    // Modal & Score functions
+    function openGrid() {
+      const container = document.getElementById('gridThumbContainer');
+      container.innerHTML = '';
+
+      slides.forEach((s, idx) => {
+        const badge = s.querySelector('.quiz-badge, h1, h2')?.innerText || `Slide ${idx + 1}`;
+        const thumb = document.createElement('div');
+        thumb.className = `grid-thumb ${idx === currentSlide ? 'active' : ''}`;
+        thumb.innerHTML = `<strong style="font-size:13px; color:#2dd4bf;">Slide ${idx + 1}</strong><div class="grid-thumb-title">${badge}</div>`;
+        thumb.onclick = () => {
+          showSlide(idx);
+          closeModals();
+        };
+        container.appendChild(thumb);
+      });
+
+      document.getElementById('gridModal').classList.add('active');
+    }
+
+    function openScoreboard() {
+      document.getElementById('scoreModal').classList.add('active');
+    }
+
+    function closeModals() {
+      document.querySelectorAll('.modal-overlay').forEach(m => m.classList.remove('active'));
+    }
+
+    function updateScore(team, delta) {
+      scores[team] += delta;
+      if (scores[team] < 0) scores[team] = 0;
+      document.getElementById(`score-${team}`).innerText = scores[team];
+    }
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.isContentEditable) return;
+
+      if (e.key === 'ArrowRight' || e.key === 'Space' || e.key === 'PageDown') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        prevSlide();
+      } else if (e.key === 'r' || e.key === 'R') {
+        toggleReveal();
+      } else if (e.key === 't' || e.key === 'T') {
+        startTimer(30);
+      } else if (e.key === 'Escape') {
+        closeModals();
+      }
+    });
+
+    // Initialize
+    updateCounter();
+  </script>
+</body>
+</html>
